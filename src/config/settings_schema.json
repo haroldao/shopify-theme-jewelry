@@ -1,0 +1,65 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Packer blank theme",
+    "theme_version": "1.0.9",
+    "theme_author": "Eric Hayes",
+    "theme_documentation_url": "https://github.com/hayes0724/packer-blank-theme",
+    "theme_support_url": "https://github.com/hayes0724/packer-blank-theme/issues"
+  },
+  {
+    "name": {
+      "cs": "Barvy",
+      "da": "Farver",
+      "de": "Farben",
+      "en": "Colors",
+      "es": "Colores",
+      "fi": "Värit",
+      "fr": "Couleurs",
+      "it": "Colori",
+      "ja": "色",
+      "ko": "색상",
+      "nb": "Farger",
+      "nl": "Kleuren",
+      "pl": "Kolory",
+      "pt-BR": "Cores",
+      "pt-PT": "Cores",
+      "sv": "Färger",
+      "th": "สี",
+      "tr": "Renkler",
+      "vi": "Màu",
+      "zh-CN": "颜色",
+      "zh-TW": "色彩"
+    },
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": {
+          "cs": "Nadpisy a odkazy",
+          "da": "Overskrifter og links",
+          "de": "Titel und Links",
+          "en": "Headings and links",
+          "es": "Títulos y enlaces",
+          "fi": "Otsikot ja linkit",
+          "fr": "En-têtes et liens",
+          "it": "Titoli e link",
+          "ja": "見出しとリンク",
+          "ko": "제목 및 링크",
+          "nb": "Overskrifter og koblinger",
+          "nl": "Koppen en links",
+          "pl": "Nagłówki i linki",
+          "pt-BR": "Títulos e links",
+          "pt-PT": "Títulos e ligações",
+          "sv": "Rubriker och länkar",
+          "th": "หัวเรื่องและลิงก์",
+          "tr": "Başlıklar ve bağlantılar",
+          "vi": "Tiêu đề và liên kết",
+          "zh-CN": "标题和链接",
+          "zh-TW": "標題和連結"
+        },
+        "default": "#3a3a3a"
+      }
+    ]
+  }
+]
