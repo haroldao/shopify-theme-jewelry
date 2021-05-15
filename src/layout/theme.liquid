@@ -46,6 +46,7 @@
 </head>
 
 <body class="template-{{ request.page_type | handle }}" data-template="{{ template.name }}" data-template-suffix="{{ template.suffix }}">
+  {% section 'preloader' %}
   {% section 'header' %}
   <div class="page__container">
     <main id="MainContent" role="main">
