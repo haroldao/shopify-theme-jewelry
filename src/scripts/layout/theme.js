@@ -13,3 +13,6 @@
 
 import "../../styles/theme.scss";
 import "../../styles/theme.css.liquid";
+
+import math from '../utils/math';
+import polyfill from '../utils/polyfill';
