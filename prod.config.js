@@ -1,10 +1,8 @@
 // Modify default webpack production config using this file
-const mergeProd = {
-  module: {
-    rules: [
+const { CleanWebpackPlugin }  = require('clean-webpack-plugin');
 
-    ],
-  }
+module.exports = {
+  plugins: [
+    new CleanWebpackPlugin()  
+  ]
 }
-
-module.exports = mergeProd
