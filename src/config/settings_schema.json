@@ -8,57 +8,152 @@
     "theme_support_url": "https://github.com/hayes0724/packer-blank-theme/issues"
   },
   {
-    "name": {
-      "cs": "Barvy",
-      "da": "Farver",
-      "de": "Farben",
-      "en": "Colors",
-      "es": "Colores",
-      "fi": "Värit",
-      "fr": "Couleurs",
-      "it": "Colori",
-      "ja": "色",
-      "ko": "색상",
-      "nb": "Farger",
-      "nl": "Kleuren",
-      "pl": "Kolory",
-      "pt-BR": "Cores",
-      "pt-PT": "Cores",
-      "sv": "Färger",
-      "th": "สี",
-      "tr": "Renkler",
-      "vi": "Màu",
-      "zh-CN": "颜色",
-      "zh-TW": "色彩"
-    },
+    "name": "Colors",
     "settings": [
       {
         "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "#c4cdd5",
+        "info": "Buttons and special ornaments"
+      },
+      {
+        "type": "color",
         "id": "color_text",
-        "label": {
-          "cs": "Nadpisy a odkazy",
-          "da": "Overskrifter og links",
-          "de": "Titel und Links",
-          "en": "Headings and links",
-          "es": "Títulos y enlaces",
-          "fi": "Otsikot ja linkit",
-          "fr": "En-têtes et liens",
-          "it": "Titoli e link",
-          "ja": "見出しとリンク",
-          "ko": "제목 및 링크",
-          "nb": "Overskrifter og koblinger",
-          "nl": "Koppen en links",
-          "pl": "Nagłówki i linki",
-          "pt-BR": "Títulos e links",
-          "pt-PT": "Títulos e ligações",
-          "sv": "Rubriker och länkar",
-          "th": "หัวเรื่องและลิงก์",
-          "tr": "Başlıklar ve bağlantılar",
-          "vi": "Tiêu đề và liên kết",
-          "zh-CN": "标题和链接",
-          "zh-TW": "標題和連結"
-        },
-        "default": "#3a3a3a"
+        "label": "Text",
+        "default": "#161d25"
+      },
+      {
+        "type": "color",
+        "id": "color_main_bg",
+        "label": "Background",
+        "default": "#fff"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "default": "helvetica_n4",
+        "label": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "default": "helvetica_n4",
+        "label": "Body text"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social sharing image"
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Image",
+        "info": "Shown when sharing a link on social media. [Learn more](https://help.shopify.com/manual/using-themes/troubleshooting/showing-social-media-thumbnail-images/) about image thumbnails."
+      },
+      {
+        "type": "header",
+        "content": "Social sharing options"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Enable sharing for blog articles",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_facebook",
+        "label": "Share on Facebook",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_twitter",
+        "label": "Tweet on Twitter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "share_pinterest",
+        "label": "Pin on Pinterest",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Sharing links"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter link"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook link"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "Pinterest link"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram link"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "Snapchat link"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "Tumblr link"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "Youtube link"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "Vimeo link"
+      }
+    ]
+  },
+  {
+    "name": "Cart",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
       }
     ]
   }
