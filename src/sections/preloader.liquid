@@ -1,6 +1,21 @@
 <div class="preloader">
     <p class="preloader__text">
-        Laboris exercitation sit ex minim sit veniam officia in est aute velit reprehenderit. Nostrud excepteur in veniam eu commodo esse labore labore mollit et consequat id. Ut laboris consequat do nisi laborum adipisicing aute et fugiat veniam incididunt.
+       {{ section.settings.preloader-text }}
     </p>
     <div class="preloader__number">0%</div>
 </div>
+
+{% schema %}
+{
+    "name": "Preloader",
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "preloader-text",
+            "label": "Preloader",
+            "default": "Preloader text",
+            "placeholder": "Preloader text"
+        }
+    ]
+}
+{% endschema %}
