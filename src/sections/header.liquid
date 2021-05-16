@@ -2,6 +2,24 @@
     <!-- <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a> -->
     <h1>hi shopi, test</h1>
     <span>template name: {{ template.name }}</span>
+
+    <a href="/" itemprop="url" class="header__logo-image">
+        {% if section.settings.svg_logo != blank %}
+            {{ section.settings.svg_logo }}
+
+        {% elsif section.settings.logo != blank %}
+          {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+               srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+               alt="{{ section.settings.logo.alt | default: shop.name }}"
+               itemprop="logo">
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+
+
+
     <div>
     {% for link in linklists.main-menu.links %}
         {% assign child_list_handle = link.title | handleize %}
@@ -31,6 +49,13 @@
 {% schema %}
   {
     "name": "Site Header",
-    "settings": []
+    "settings": [
+        {
+            "type": "text",
+            "id": "svg_logo",
+            "label": "Logo SVG",
+            "info" : "Copier coller le SVG (Balises <svg></svg> et leur contenu)"
+        }
+    ]
   }
 {% endschema %}
