@@ -28,6 +28,9 @@
       <meta property="og:image:height" content="{{ image.height }}">
       <meta property="og:image:alt" content="{{ image.alt | escape }}">
     {% endfor %}
+    <meta property="og:type" content="product" />
+    <meta property="og:price:amount" content="{{ product.price | money_without_currency }}" />
+    <meta property="og:price:currency" content="{{ shop.currency }}" />
   {% endcapture %}
 
 {% elsif template.name == 'article' %}
