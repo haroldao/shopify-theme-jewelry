@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'George X';
     src: local('George X Regular'), local('GeorgeX-Regular'),
-        url('GeorgeX-Regular.woff2') format('woff2'),
-        url('GeorgeX-Regular.woff') format('woff');
+        font-url('GeorgeX-Regular.woff2') format('woff2'),
+        font-url('GeorgeX-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -11,8 +11,8 @@
 @font-face {
     font-family: 'Suisse BP Int\'l';
     src: local('Suisse BP Int\'l Regular'), local('SuisseBPIntl-Regular'),
-        url('SuisseBPIntl-Regular.woff2') format('woff2'),
-        url('SuisseBPIntl-Regular.woff') format('woff');
+        font-url('SuisseBPIntl-Regular.woff2') format('woff2'),
+        font-url('SuisseBPIntl-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -21,8 +21,8 @@
 @font-face {
     font-family: 'Suisse BP Int\'l';
     src: local('Suisse BP Int\'l UltraLight'), local('SuisseBPIntl-UltraLight'),
-        url('SuisseBPIntl-UltraLight.woff2') format('woff2'),
-        url('SuisseBPIntl-UltraLight.woff') format('woff');
+        font-url('SuisseBPIntl-UltraLight.woff2') format('woff2'),
+        font-url('SuisseBPIntl-UltraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -31,8 +31,8 @@
 @font-face {
     font-family: 'Suisse BP Int\'l';
     src: local('Suisse BP Int\'l Light'), local('SuisseBPIntl-Light'),
-        url('SuisseBPIntl-Light.woff2') format('woff2'),
-        url('SuisseBPIntl-Light.woff') format('woff');
+        font-url('SuisseBPIntl-Light.woff2') format('woff2'),
+        font-url('SuisseBPIntl-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
