@@ -2,11 +2,21 @@
 
 @import 'base/reset';
 
+@import 'utils/functions';
+@import 'utils/variables';
+@import 'utils/mixins';
+
+
+@import 'pages/index';
+
+
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: yellowgreen;
-    color: black;
-    // font-size: 4rem;
+    font-family: $font-suisse-bp;
+}
+
+img{
+    max-width: 100%;
 }
