@@ -1,17 +1,44 @@
-{% for collection in collections %}
-  {% unless collection.handle == 'frontpage' %}
-    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-    <a href="{{ collection.url }}">More {{ collection_title }} &rsaquo;</a>
-    {% for product in collection.products limit:5 %}
-      {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
-      <div>
-        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        {{ product.price | money }}
-        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-        <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-        </a>
+<div class="collections">
+  <div class="collections__wrapper">
+    <div class="collections__titles">
+      {% for collection in collections %}
+        {% unless collection.handle == 'frontpage' %}
+          {% assign collection_title = collection.title | escape %}
+          {% assign collection_description = collection.description %}
+          <div class="collections__titles__label">Collection {% cycle "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" %}</div>
+          <div class="collections__titles__title">{{ collection_title | remove: 'Collection' }}</div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="collections__gallery">
+      <div class="collections__gallery__wrapper">
+        {% for collection in collections %}
+          {% unless collection.handle == 'frontpage' %}
+            {% for product in collection.products %}
+              <a href="{{ product.url | within: collection }}" class="collections__gallery__link">
+                <figure class="collections__gallery__media">
+                  <img class="collections__gallery__media__image" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" >
+                </figure>
+              </a>
+            {% endfor %}
+          {% endunless %}
+        {% endfor %}
       </div>
-    {% endfor %}
-  {% endunless %}
-{% endfor %}
+    </div>
+    <div class="collections__content">
+      {% for collection in collections %}
+          {% unless collection.handle == 'frontpage' %}
+          {% assign collection_title = collection.title | escape %}
+          {% assign collection_description = collection.description %}
+            <article class="collections__article">
+              <h2 class="collections__article__title">{{ collection_title }}</h2>
+              {% if collection_description != blank %}
+                <p class="collections__article__description">{{ collection_description }}</p>
+              {% endif %}
+            </article>
+          {% endunless %}
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+</div>
