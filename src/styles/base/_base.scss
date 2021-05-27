@@ -12,3 +12,14 @@ body{
 img{
     max-width: 100%;
 }
+
+figure, img {
+    pointer-events: none; /* Disable save image (right-click) */
+}
+.george{
+    font-family: $font-george-x;
+}
+
+.suisse{
+    font-family: $font-suisse-bp;
+}
