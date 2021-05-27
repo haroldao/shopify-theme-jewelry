@@ -1,15 +1,15 @@
 .preloader{
+    display: none;
+    z-index: 9999;
     @extend %cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %center;
     text-align: center;
-    .preloader__text{
+    &__text{
         @extend %title-53;
         max-width: 66rem;
 
     }
-    .preloader__number{
+    &__number{
         @extend %description-14;
         position: absolute;
         bottom: 7.3rem;
