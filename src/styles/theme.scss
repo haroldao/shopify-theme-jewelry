@@ -1,22 +1,19 @@
 @charset 'UTF-8';
 
 @import 'base/reset';
-
-@import 'utils/functions';
 @import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/responsive';
+
+@import 'mixins/titles';
+@import 'mixins/descriptions';
+
+@import 'base/fonts';
 @import 'utils/mixins';
 
+@import 'base/base';
 
+@import 'sections/preloader';
 @import 'pages/index';
 
 
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $font-suisse-bp;
-}
-
-img{
-    max-width: 100%;
-}
