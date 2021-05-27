@@ -13,9 +13,17 @@
 
 @import 'base/base';
 
-@import 'sections/preloader';
+@import 'snippets/title';
+@import 'snippets/images-scroll';
+@import 'snippets/content';
+@import 'snippets/highlight';
 
-@import 'pages/index';
+
+@import 'sections/preloader';
+@import 'sections/header';
+
+// @import 'pages/index';
 @import 'pages/product';
+@import 'pages/collections';
 
 
