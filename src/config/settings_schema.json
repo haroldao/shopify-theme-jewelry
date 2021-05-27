@@ -28,6 +28,16 @@
         "id": "color_main_bg",
         "label": "Background",
         "default": "#fff"
+      },
+      {
+        "type":"header",
+        "content": "Product Page color"
+      },
+      {
+        "type": "color",
+        "id": "color_product_bg",
+        "label": "Product Page Background",
+        "default": "#a4f"
       }
     ]
   },
