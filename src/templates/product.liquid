@@ -25,46 +25,52 @@
         {% assign image_svg = product.metafields.extended-description.svg %}
         {% assign description-text = product.metafields.extended-description.text %}
         {% assign icons_class = "product__information__highlight__icon" %}
-        <div class="product__information__highlights">
-          {% if description-text | slice: 0 %}
-            <p class="product__information__highlight">
-              {% include 'icon-1' with Class: icons_class %}
-              <span class="product__information__highlight__text">{{ description-text | slice: 0 }}</span>
-            </p>
-          {% endif %}
-          {% if description-text | slice: 1 %}
-            <p class="product__information__highlight">
-              {% include 'icon-2' with Class: icons_class %}
-              <span class="product__information__highlight__text">{{ description-text | slice: 1 }}</span>
-            </p>
-          {% endif %}
-        </div>
+        {% if description-text != blank %}
+          <div class="product__information__highlights">
+            {% if description-text | slice: 0 %}
+              <p class="product__information__highlight">
+                {% include 'icon-1' with Class: icons_class %}
+                <span class="product__information__highlight__text">{{ description-text | slice: 0 }}</span>
+              </p>
+            {% endif %}
+            {% if description-text | slice: 1 %}
+              <p class="product__information__highlight">
+                {% include 'icon-2' with Class: icons_class %}
+                {% assign description_2 = description-text | slice: 1 %}
+                <span class="product__information__highlight__text">{{ description_2 }}</span>
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
         <div class="product__information__list">
         {% if product.metafields.info-text.info-text %}
           <p class="product__information__item">
             <strong class="product__information__item__title">{{ product.metafields.info.info }}</strong>
-            <span class="product__information__item__title">{{ product.metafields.info-text.info-text }}</span>
+            <span class="product__information__item__description">{{ product.metafields.info-text.info-text | newline_to_br }}</span>
           </p>
         {% endif %}
         {% if product.description != blank %}
           <strong class="product__information__item__title">YOU SHOULD KNOW</strong>
-          <span class="product__information__item__title">{{ product.description }}</span>
+          <span class="product__information__item__description">{{ product.description | newline_to_br }}</span>
         {% endif %}
         </div>
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-          <select name="id" id="productSelect">
-            {% for variant in product.variants %}
-              {% if variant.available %}
-                <option value="{{ variant.id }}">
-                  {{ variant.title }} - {{ variant.price | money_with_currency }}
-                </option>
-              {% else %}
-                <option disabled="disabled">
-                  {{ variant.title }} - sold out
-                </option>
-              {% endif %}
-            {% endfor %}
-          </select>
+          {%- capture default_title -%}{{ 'products.product.default_variant_title' | t }}{%- endcapture -%}
+          {% unless product.variants.size == 1 and product.variants.first.title contains 'Default Title' %}
+            <select name="id" id="productSelect">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option value="{{ variant.id }}">
+                    {{ variant.title }} - {{ variant.price | money_with_currency }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - sold out
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          {% endunless %}
           {{ current_variant.price | money }}
           <label for="Quantity">quantity</label>
           <input type="number" id="Quantity" name="quantity" value="1" min="1">
