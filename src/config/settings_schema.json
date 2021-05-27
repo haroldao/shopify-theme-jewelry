@@ -38,6 +38,26 @@
         "id": "color_product_bg",
         "label": "Product Page Background",
         "default": "#a4f"
+      },
+      {
+        "type":"header",
+        "content": "List Collections Page color"
+      },
+      {
+        "type": "color",
+        "id": "color_list-collections_bg",
+        "label": "List Collections Page Background",
+        "default": "#BC978C"
+      },
+      {
+        "type":"header",
+        "content": "About Page color"
+      },
+      {
+        "type": "color",
+        "id": "color_about_bg",
+        "label": "About Page Background",
+        "default": "#B2BBC3"
       }
     ]
   },
