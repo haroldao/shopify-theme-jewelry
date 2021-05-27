@@ -32,6 +32,9 @@
                     .product__information__highlight{
                         align-items: center;
                         display: flex;
+                        &:not(:first-child){
+                            margin-top: 4rem;
+                        }
                         svg{
                             width: 4rem;
                             height: 4rem;
