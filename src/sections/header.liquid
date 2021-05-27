@@ -1,9 +1,6 @@
 <div class="header">
   <!-- <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a> -->
-  <h1>hi shopi, test</h1>
-  <span>template name: {{ template.name }}</span>
-
-  <a href="/" itemprop="url" class="header__logo-image">
+  <a href="/" itemprop="url" class="header__logo">
     {% if section.settings.svg_logo != blank %}
       {{ section.settings.svg_logo }}
 
@@ -18,28 +15,26 @@
       <h1>{{ shop.name }}</h1>
     {% endif %}
   </a>
-
-
-
-  <div>
-  {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-      <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      {% assign current_url = canonical_url | split: 'com' | last %}
-      {% unless request.path == link.url %}
+  <div class="header-part">
+    <div class="header__links">
+    {% for link in linklists.main-menu.links %}
+      {% assign child_list_handle = link.title | handleize %}
+      {% if linklists[child_list_handle].links != blank %}
         <a href="{{ link.url }}">{{ link.title }}</a>
-      {% endunless %}
-    {% endif %}
-  {% endfor %}
+        [{% for childlink in linklists[child_list_handle].links %}
+        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+        {% endfor %}]
+      {% else %}
+        {% assign current_url = canonical_url | split: 'com' | last %}
+        {% unless request.path == link.url %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+    </div>
+    <a class="header__cart" href="/cart">Cart</a>
   </div>
-  <a href="/cart">Cart</a>
 </div>
-
 {% schema %}
   {
     "name": "Site Header",
