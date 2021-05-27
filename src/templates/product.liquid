@@ -38,7 +38,7 @@
                 <span class="product__information__highlight__text">{{ description-text  }}</span>
               </p>
             {% endif %}
-            {% if description-text %}
+            {% if description-text_2 %}
               <p class="product__information__highlight">
                 {% include 'icon-2' with Class: icons_class %}
                 <span class="product__information__highlight__text">{{ description-text_2 }}</span>
@@ -77,8 +77,7 @@
               {% endfor %}
             </select>
           {% endunless %}
-          {{ current_variant.price | money }}
-          <label for="Quantity">quantity</label>
+          <span class="current__price">{{ current_variant.price | money }}</span>
           <input type="number" id="Quantity" name="quantity" value="1" min="1">
           <button type="submit" name="add" id="AddToCart">Add to cart</button>
         </form>
