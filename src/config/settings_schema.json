@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Packer blank theme",
-    "theme_version": "1.0.9",
-    "theme_author": "Eric Hayes",
-    "theme_documentation_url": "https://github.com/hayes0724/packer-blank-theme",
-    "theme_support_url": "https://github.com/hayes0724/packer-blank-theme/issues"
+    "theme_name": "Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Harold",
+    "theme_documentation_url": "https://haroldao.com/",
+    "theme_support_url": "https://haroldao.com/"
   },
   {
     "name": "Colors",
